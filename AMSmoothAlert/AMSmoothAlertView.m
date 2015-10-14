@@ -116,7 +116,7 @@
 
 - (UIView*) alertPopupView
 {
-    UIView * alertSquare = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 150)];
+    UIView * alertSquare = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 160)];
     
     alertSquare.backgroundColor = [UIColor colorWithRed:0.937 green:0.937 blue:0.937 alpha:1];
     alertSquare.center = CGPointMake([self screenFrame].size.width/2, -[self screenFrame].size.height/2);
@@ -206,7 +206,7 @@
     [alertView addSubview:_titleLabel];
     
     
-    _textLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 180, 50)];
+    _textLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 180, 60)];
     _textLabel.center = CGPointMake(alertView.frame.size.width/2, 80);
     _textLabel.text = text;
     _textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:12.0f];
@@ -223,11 +223,11 @@
     if (hasCancelButton) {
         //default button
         _defaultButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 84, 30)];
-        _defaultButton.center = CGPointMake((alertView.frame.size.width/4)+3, 120);
+        _defaultButton.center = CGPointMake((alertView.frame.size.width/4)+3, 130);
 
         //cancel button
         _cancelButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 84, 30)];
-        _cancelButton.center = CGPointMake((alertView.frame.size.width*3/4)-3, 120);
+        _cancelButton.center = CGPointMake((alertView.frame.size.width*3/4)-3, 130);
         _cancelButton.backgroundColor = [UIColor colorWithRed:0.792 green:0.792 blue:0.792 alpha:1];
         
         [_cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
@@ -237,7 +237,7 @@
         [_cancelButton.layer setCornerRadius:3.0f];
     }else{
         _defaultButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 180, 30)];
-        _defaultButton.center = CGPointMake(alertView.frame.size.width/2, 120);
+        _defaultButton.center = CGPointMake(alertView.frame.size.width/2, 130);
     }
 
     [self setColorForButton:color onButton:_defaultButton withType:type];
