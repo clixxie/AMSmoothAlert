@@ -20,13 +20,14 @@ typedef void (^dismissAlertWithButton)(AMSmoothAlertView *, UIButton *);
 
 @interface AMSmoothAlertView : UIView
 
-
+@property (nonatomic, strong) UIView *alertView;
 @property (nonatomic, assign) float cornerRadius;
 @property (nonatomic, assign) bool isDisplayed;
 @property (nonatomic, assign) AnimationType animationType;
 @property (nonatomic, strong) UILabel * titleLabel;
 @property (nonatomic, strong) UILabel * textLabel;
 @property (nonatomic, strong) UIButton *defaultButton;
+@property (nonatomic, strong) UIButton *extraButton;
 @property (nonatomic, strong) UIButton *cancelButton;
 @property (nonatomic, strong) UIImageView *logoView;
 @property (nonatomic, strong) UIFont *titleFont;
@@ -35,6 +36,7 @@ typedef void (^dismissAlertWithButton)(AMSmoothAlertView *, UIButton *);
 @property (nonatomic, copy) dismissAlertWithButton completionBlock;
 
 
+- (id) initDropAlertWithTitle:(NSString*) title andText:(NSString*) text andCancelButton:(BOOL)hasCancelButton andExtraButton:(BOOL)hasExtraButton forAlertType:(AlertType) type andColor:(UIColor*) color;
 - (id) initDropAlertWithTitle:(NSString*) title andText:(NSString*) text andCancelButton:(BOOL)hasCancelButton forAlertType:(AlertType) type;
 - (id) initDropAlertWithTitle:(NSString*) title andText:(NSString*) text andCancelButton:(BOOL)hasCancelButton forAlertType:(AlertType) type andColor:(UIColor*) color;
 - (id) initFadeAlertWithTitle:(NSString*) title andText:(NSString*) text andCancelButton:(BOOL)hasCancelButton forAlertType:(AlertType) type;
