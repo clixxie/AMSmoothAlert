@@ -286,6 +286,10 @@
     }
     else if (!hasCancelButton && hasExtraButton)
     {
+        CGRect frame = self.alertView.frame;
+        frame.size.height += 70;
+        self.alertView.frame = frame;
+        
         //default button
         _defaultButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 180, 30)];
         _defaultButton.center = CGPointMake((_alertView.frame.size.width/2), 130);
