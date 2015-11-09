@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
 
   s.name         = "AMSmoothAlert"
-  s.version      = "1.1"
+  s.version      = "1.2"
   s.summary      = "Cool AlertView by Antoine Marliac"
 
   s.description  = <<-DESC
                    Pretty cool AlertView animation made by Antoine Marliac
-                
+
                    DESC
 
   s.homepage     = "https://github.com/mtonio91/AMSmoothAlert"
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
-  
+
   s.author             = { "Antoine Marliac" => "antoine.marliac@supinfo.com" }
   s.social_media_url   = "https://twitter.com/Toinetoine75"
 
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "5.0"
 
 
-  s.source       = { :git => "https://github.com/mtonio91/AMSmoothAlert.git", :tag => "1.1" }
+  s.source       = { :git => "https://github.com/mtonio91/AMSmoothAlert.git", :tag => "1.2" }
 
 
 
