@@ -287,7 +287,7 @@
     else if (!hasCancelButton && hasExtraButton)
     {
         CGRect frame = self.alertView.frame;
-        frame.size.height += 70;
+        frame.size.height += 35;
         self.alertView.frame = frame;
         
         //default button
