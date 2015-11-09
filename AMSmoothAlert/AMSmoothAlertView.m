@@ -284,6 +284,25 @@
         
     
     }
+    else if (!hasCancelButton && hasExtraButton)
+    {
+        //default button
+        _defaultButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 180, 30)];
+        _defaultButton.center = CGPointMake((_alertView.frame.size.width/2), 130);
+        
+        //extra button
+        _extraButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 180, 30)];
+        _extraButton.center = CGPointMake((_alertView.frame.size.width/2), 170);
+        _extraButton.backgroundColor = [UIColor colorWithRed:0.792 green:0.792 blue:0.792 alpha:1];
+        
+        [_extraButton setTitle:@"Extra" forState:UIControlStateNormal];
+        _extraButton.titleLabel.textColor = [UIColor whiteColor];
+        _extraButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:18.0f];
+        [_extraButton addTarget:self action:@selector(handleButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
+        [_extraButton.layer setCornerRadius:3.0f];
+        
+        
+    }
     else if (hasCancelButton)
     {
         //default button
