@@ -284,19 +284,23 @@
         
     
     }
-    else if (!hasCancelButton && hasExtraButton)
+    else if (!hasCancelButton && hasExtraButton) // LongMessage
     {
         CGRect frame = self.alertView.frame;
-        frame.size.height += 35;
+        frame.size.height += 140;
         self.alertView.frame = frame;
+        
+        _textLabel.frame = CGRectMake(0, 0, 180, 160);
+        //_textLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 180, 160)];
+        _textLabel.center = CGPointMake(_alertView.frame.size.width/2, 140);
         
         //default button
         _defaultButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 180, 30)];
-        _defaultButton.center = CGPointMake((_alertView.frame.size.width/2), 130);
+        _defaultButton.center = CGPointMake((_alertView.frame.size.width/2), 240);
         
         //extra button
         _extraButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 180, 30)];
-        _extraButton.center = CGPointMake((_alertView.frame.size.width/2), 170);
+        _extraButton.center = CGPointMake((_alertView.frame.size.width/2), 280);
         _extraButton.backgroundColor = [UIColor colorWithRed:0.792 green:0.792 blue:0.792 alpha:1];
         
         [_extraButton setTitle:@"Extra" forState:UIControlStateNormal];
