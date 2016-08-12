@@ -36,6 +36,17 @@
     return self;
 }
 
+- (id) initDropAlertNSAttributedWithTitle:(NSAttributedString*) title andText:(NSAttributedString*) text andCancelButton:(BOOL)hasCancelButton andExtraButton:(BOOL)hasExtraButton forAlertType:(AlertType) type andColor:(UIColor*) color
+{
+    self = [super init];
+    if (self) {
+        // Initialization code
+        _animationType = DropAnimation;
+        [self _initViewNSAttributedWithTitle:title andText:text andCancelButton:hasCancelButton andExtraButton:hasExtraButton forAlertType:type andColor:color];
+    }
+    return self;
+}
+
 - (id) initDropAlertWithTitle:(NSString*) title andText:(NSString*) text andCancelButton:(BOOL)hasCancelButton forAlertType:(AlertType) type andColor:(UIColor*) color
 {
     self = [super init];
@@ -143,6 +154,24 @@
     [self circleSetupForAlertType:type andColor:color];
 }
 
+- (void) _initViewNSAttributedWithTitle:(NSAttributedString *)title andText:(NSAttributedString *)text andCancelButton:(BOOL)hasCancelButton andExtraButton:(BOOL)hasExtraButton forAlertType:(AlertType)type andColor:(UIColor*) color
+{
+    self.frame = [self screenFrame];
+    self.opaque = YES;
+    self.alpha = 1;
+    
+    _blurFilter = [[GPUImageiOSBlurFilter alloc] init];
+    _blurFilter.blurRadiusInPixels = 2.0;
+    
+    bg = [[UIImageView alloc]initWithFrame:[self screenFrame]];
+    
+    _alertView = [self alertPopupView];
+    [self labelSetupNSAttributedWithTitle:title andText:text];
+    [self buttonSetupForType:type withCancelButton: hasCancelButton withExtraButton: hasExtraButton andColor:color];
+    [self addSubview:_alertView];
+    
+    [self circleSetupForAlertType:type andColor:color];
+}
 
 - (UIView*) alertPopupView
 {
@@ -240,6 +269,26 @@
     _textLabel.center = CGPointMake(_alertView.frame.size.width/2, 80);
     _textLabel.text = text;
     _textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:12.0f];
+    _textLabel.textAlignment = NSTextAlignmentCenter;
+    _textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    _textLabel.numberOfLines = 0;
+    [_alertView addSubview:_textLabel];
+    
+}
+
+- (void) labelSetupNSAttributedWithTitle:(NSAttributedString*) title andText:(NSAttributedString*) text
+{
+    _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 180, 30)];
+    _titleLabel.center = CGPointMake(_alertView.frame.size.width/2, 45);
+    _titleLabel.attributedText = title;
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
+    
+    [_alertView addSubview:_titleLabel];
+    
+    
+    _textLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 180, 60)];
+    _textLabel.center = CGPointMake(_alertView.frame.size.width/2, 80);
+    _textLabel.attributedText = text;
     _textLabel.textAlignment = NSTextAlignmentCenter;
     _textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     _textLabel.numberOfLines = 0;
