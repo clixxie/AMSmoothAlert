@@ -37,6 +37,7 @@ typedef void (^dismissAlertWithButton)(AMSmoothAlertView *, UIButton *);
 
 
 - (id) initDropAlertWithTitle:(NSString*) title andText:(NSString*) text andCancelButton:(BOOL)hasCancelButton andExtraButton:(BOOL)hasExtraButton forAlertType:(AlertType) type andColor:(UIColor*) color;
+- (id) initDropAlertNSAttributedWithTitle:(NSAttributedString*) title andText:(NSAttributedString*) text andCancelButton:(BOOL)hasCancelButton andExtraButton:(BOOL)hasExtraButton forAlertType:(AlertType) type andColor:(UIColor*) color;
 - (id) initDropAlertWithTitle:(NSString*) title andText:(NSString*) text andCancelButton:(BOOL)hasCancelButton forAlertType:(AlertType) type;
 - (id) initDropAlertWithTitle:(NSString*) title andText:(NSString*) text andCancelButton:(BOOL)hasCancelButton forAlertType:(AlertType) type andColor:(UIColor*) color;
 - (id) initFadeAlertWithTitle:(NSString*) title andText:(NSString*) text andCancelButton:(BOOL)hasCancelButton forAlertType:(AlertType) type;
