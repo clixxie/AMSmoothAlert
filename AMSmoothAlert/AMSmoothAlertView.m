@@ -395,6 +395,7 @@
         _cancelButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 180, 30)];
         _cancelButton.center = CGPointMake((_alertView.frame.size.width/2), 280);
         _cancelButton.titleLabel.textColor = [UIColor whiteColor];
+        [_cancelButton addTarget:self action:@selector(handleButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
     }
     else if (!hasBigAlertView & hasCancelButton)
     {
