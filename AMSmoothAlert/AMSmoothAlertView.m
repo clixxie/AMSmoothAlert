@@ -306,7 +306,7 @@
 - (void) buttonSetupForType:(AlertType)type withCancelButton:(BOOL) hasCancelButton withExtraButton:(BOOL) hasExtraButton andColor:(UIColor*) color andBigAlertView: (BOOL) hasBigAlertView
 {
  
-    if (!hasBigAlertView & hasCancelButton && hasExtraButton)
+    if (!hasBigAlertView && hasCancelButton && hasExtraButton)
     {
         CGRect frame = self.alertView.frame;
         frame.size.height += 70;
@@ -338,7 +338,7 @@
         [_extraButton addTarget:self action:@selector(handleButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
         [_extraButton.layer setCornerRadius:3.0f];
     }
-    else if (!hasBigAlertView & !hasCancelButton && hasExtraButton) // LongMessage
+    else if (!hasBigAlertView && !hasCancelButton && hasExtraButton) // LongMessage
     {
         CGRect frame = self.alertView.frame;
         frame.size.height += 140;
@@ -363,7 +363,7 @@
         [_extraButton addTarget:self action:@selector(handleButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
         [_extraButton.layer setCornerRadius:3.0f];
     }
-    else if(hasBigAlertView & !hasCancelButton && !hasExtraButton) //long message without extra buttons
+    else if(hasBigAlertView && !hasCancelButton && !hasExtraButton) //long message without extra buttons
     {
         CGRect frame = self.alertView.frame;
         frame.size.height += 60;
@@ -377,7 +377,7 @@
         _defaultButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 180, 30)];
         _defaultButton.center = CGPointMake((_alertView.frame.size.width/2), 240);
     }
-    else if (hasBigAlertView & hasCancelButton && !hasExtraButton) // LongMessage with cancel button but no extra button
+    else if (hasBigAlertView && hasCancelButton && !hasExtraButton) // LongMessage with cancel button but no extra button
     {
         CGRect frame = self.alertView.frame;
         frame.size.height += 90;
@@ -397,7 +397,7 @@
         _cancelButton.titleLabel.textColor = [UIColor whiteColor];
         [_cancelButton addTarget:self action:@selector(handleButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
     }
-    else if (!hasBigAlertView & hasCancelButton)
+    else if (!hasBigAlertView && hasCancelButton)
     {
         //default button
         _defaultButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 84, 30)];
