@@ -419,6 +419,26 @@
         _cancelButton.titleLabel.textColor = [UIColor whiteColor];
         [_cancelButton addTarget:self action:@selector(handleButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
     }
+    else if (hasBigAlertView && !hasCancelButton && hasExtraButton) // LongMessage without cancel button but with extra button
+    {
+        CGRect frame = self.alertView.frame;
+        frame.size.height += 90;
+        self.alertView.frame = frame;
+
+        _textLabel.frame = CGRectMake(0, 0, 180, 160);
+        //_textLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 180, 160)];
+        _textLabel.center = CGPointMake(_alertView.frame.size.width/2, 140);
+
+        //default button
+        _defaultButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 180, 30)];
+        _defaultButton.center = CGPointMake((_alertView.frame.size.width/2), 240);
+
+        //cancel button
+        _extraButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 180, 30)];
+        _extraButton.center = CGPointMake((_alertView.frame.size.width/2), 280);
+        _extraButton.titleLabel.textColor = [UIColor whiteColor];
+        [_extraButton addTarget:self action:@selector(handleButtonTouched:) forControlEvents:UIControlEventTouchUpInside];
+    }
     else if (!hasBigAlertView && hasCancelButton)
     {
         //default button

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "AMSmoothAlert"
-  s.version      = "2.2.0"
+  s.version      = "2.3.0"
   s.summary      = "Cool AlertView by Antoine Marliac"
 
   s.description  = <<-DESC
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "5.0"
 
 
-  s.source       = { :git => "https://github.com/mtonio91/AMSmoothAlert.git", :tag => "2.2.0" }
+  s.source       = { :git => "https://github.com/mtonio91/AMSmoothAlert.git", :tag => "2.3.0" }
 
 
 
