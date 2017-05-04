@@ -2,3 +2,5 @@
 AMSmoothAlertViewDemo.xcodeproj/xcuserdata/*.xcuserdatad/
 
 AMSmoothAlertViewDemo.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad/
+.DS_Store
+*/**/.DS_Store
